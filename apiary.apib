@@ -1,0 +1,313 @@
+FORMAT: 1A
+
+# Tasks
+Task Management API
+
+## Tasks Collection [/tasks]
+
+### List all tasks [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "completed_date": "2016-05-26T08:40:51.620Z",
+                "created_date": "2016-05-26T08:40:51.620Z",
+                "due_date": "2016-05-26T08:40:51.620Z",
+                "start_date": "2016-05-26T08:40:51.620Z",
+                "subject": "This is task 1",
+                "taskid": "1",
+                "status": 
+                [
+                    {
+                        "name": "active",
+                        "ordinal": "1",
+                        "status_id": "1"
+                    }
+                ],
+                "users": 
+                [
+                    {
+                        "first_name": "kevin",
+                        "last_name": "platt",
+                        "user_id": "1",
+                        "user_name": "platt"
+                    },{
+                        "first_name": "kevin",
+                        "last_name": "dawn",
+                        "user_id": "2",
+                        "user_name": "dawn"
+                    }
+                ],
+                "links": 
+                [
+                    {
+                        "href": "#",
+                        "method": "method_1",
+                        "rel": "stylesheet"
+                    }, {
+                        "href": "#",
+                        "method": "method_2",
+                        "rel": "stylesheet"
+                    }
+                ]
+            }, 
+            {
+                "completed_date": "2016-05-26T08:40:51.620Z",
+                "created_date": "2016-05-26T08:40:51.620Z",
+                "due_date": "2016-05-26T08:40:51.620Z",
+                "start_date": "2016-05-26T08:40:51.620Z",
+                "subject": "This is task 2",
+                "taskid": "2",
+                "status": 
+                [
+                    {
+                        "name": "de_active",
+                        "ordinal": "2",
+                        "status_id": "2"
+                    }
+                ],
+                "users": 
+                [
+                    {
+                        "first_name": "kevin",
+                        "last_name": "platt",
+                        "user_id": "1",
+                        "user_name": "platt"
+                    },{
+                        "first_name": "kevin",
+                        "last_name": "dawn",
+                        "user_id": "2",
+                        "user_name": "dawn"
+                    }
+                ],
+                "links": 
+                [
+                    {
+                        "href": "#",
+                        "method": "method_1",
+                        "rel": "stylesheet"
+                    }, {
+                        "href": "#",
+                        "method": "method_2",
+                        "rel": "stylesheet"
+                    }
+                ]
+            }
+        ]
+        
+## Create task [POST /tasks]
+
++ Request (application/json)
+
+        {
+            "completed_date": "2016-05-26T08:40:51.620Z",
+            "created_date": "2016-05-26T08:40:51.620Z",
+            "due_date": "2016-05-26T08:40:51.620Z",
+            "start_date": "2016-05-26T08:40:51.620Z",
+            "subject": "This is task 10",
+            "status": 
+            [
+                {
+                    "name": "active",
+                    "ordinal": "1",
+                    "status_id": "1"
+                }
+            ],
+            "users": 
+            [
+                {
+                    "first_name": "kevin",
+                    "last_name": "platt",
+                    "user_id": "1",
+                    "user_name": "platt"
+                },{
+                    "first_name": "kevin",
+                    "last_name": "dawn",
+                    "user_id": "2",
+                    "user_name": "dawn"
+                }
+            ],
+            "links": 
+            [
+                {
+                    "href": "#",
+                    "method": "method_1",
+                    "rel": "stylesheet"
+                }, {
+                    "href": "#",
+                    "method": "method_2",
+                    "rel": "stylesheet"
+                }
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /tasks/10
+            
+    + Body
+
+              {
+                "completed_date": "2016-05-26T08:40:51.620Z",
+                "created_date": "2016-05-26T08:40:51.620Z",
+                "due_date": "2016-05-26T08:40:51.620Z",
+                "start_date": "2016-05-26T08:40:51.620Z",
+                "subject": "This is task 10",
+                "task_id": "10",
+                "status": 
+                [
+                    {
+                        "name": "active",
+                        "ordinal": "1",
+                        "status_id": "1"
+                    }
+                ],
+                "users": 
+                [
+                    {
+                        "first_name": "kevin",
+                        "last_name": "platt",
+                        "user_id": "1",
+                        "user_name": "platt"
+                    },{
+                        "first_name": "kevin",
+                        "last_name": "dawn",
+                        "user_id": "2",
+                        "user_name": "dawn"
+                    }
+                ],
+                "links": 
+                [
+                    {
+                        "href": "#",
+                        "method": "method_1",
+                        "rel": "stylesheet"
+                    }, {
+                        "href": "#",
+                        "method": "method_2",
+                        "rel": "stylesheet"
+                    }
+                ]
+            } 
+    
+## Update task [PUT]
+
++ Request (application/json)
+
+        {
+            "completed_date": "2016-05-26T08:40:51.620Z",
+            "created_date": "2016-05-26T08:40:51.620Z",
+            "due_date": "2016-05-26T08:40:51.620Z",
+            "start_date": "2016-05-26T08:40:51.620Z",
+            "subject": "This is task 10_updated",
+            "task_id": "10"
+            "status": 
+            [
+                {
+                    "name": "active",
+                    "ordinal": "1",
+                    "status_id": "1"
+                }
+            ],
+            "users": 
+            [
+                {
+                    "first_name": "kevin",
+                    "last_name": "platt",
+                    "user_id": "1",
+                    "user_name": "platt"
+                },{
+                    "first_name": "kevin",
+                    "last_name": "dawn",
+                    "user_id": "2",
+                    "user_name": "dawn"
+                }
+            ],
+            "links": 
+            [
+                {
+                    "href": "#",
+                    "method": "method_1",
+                    "rel": "stylesheet"
+                }, {
+                    "href": "#",
+                    "method": "method_2",
+                    "rel": "stylesheet"
+                }
+            ]
+        }
+
++ Response 200 (text/plain)
+
+        task_id = 10 updated success
+
+## Delete task [DELETE /tasks/{task_id}]
+
++ Parameters
+    + task_id: 1 (required, number) - ID of the Task in form of an integer
+
++ Response 200 (text/plain)
+
+        task_id = 1 deleted success
+
+## Get task status [GET /tasks/{task_id}/status/{status_name}]
+
++ Parameters
+    + task_id: 1 (required, number) - ID of the Task in form of an integer
+    + status_name: active(required, string) - Status name of Task
+    
++ Response 200
+
+        [
+            {
+                "completed_date": "2016-05-26T08:40:51.620Z",
+                "created_date": "2016-05-26T08:40:51.620Z",
+                "due_date": "2016-05-26T08:40:51.620Z",
+                "start_date": "2016-05-26T08:40:51.620Z",
+                "subject": "This is task 1",
+                "taskid": "1",
+                "status":
+                [
+                    {
+                        "name": "active",
+                        "ordinal": "1",
+                        "status_id": "1"
+                    }
+                ]
+            }
+        ]    
+
+## Get the users assigned to the specified task [GET /task/{task_id}/users]
+
++ Parameters
+    + task_id: 1 (required, number) - ID of the Task in form of an integer
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "completed_date": "2016-05-26T08:40:51.620Z",
+                "created_date": "2016-05-26T08:40:51.620Z",
+                "due_date": "2016-05-26T08:40:51.620Z",
+                "start_date": "2016-05-26T08:40:51.620Z",
+                "subject": "This is task 1",
+                "taskid": "1",
+                "users":
+                [
+                    {
+                        "first_name": "kevin",
+                        "last_name": "platt",
+                        "user_id": "1",
+                        "user_name": "platt"
+                    },{
+                        "first_name": "kevin",
+                        "last_name": "dawn",
+                        "user_id": "2",
+                        "user_name": "dawn"
+                    }
+                ]
+            }
+        ]
